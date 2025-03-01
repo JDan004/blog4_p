@@ -1,3 +1,17 @@
 <x-app-layout>
-    <h1>Aquí se mostrará el listado de posts</h1>
+
+    <ul>
+        <h1>Listado de posts</h1>
+
+        <a href="{{ route('posts.create') }}">Crear nuevo post</a>
+        
+        @foreach ($posts as $post)
+            <li>
+                <a href="{{ route('posts.show', $post) }}">
+                    {{ $post->title }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
+
 </x-app-layout>
